@@ -29,6 +29,7 @@ class MultisController < ApplicationController
   # POST /multis.json
   def create
     @multi = Multi.new(multi_params)
+    @multi.user = current_user
 
     respond_to do |format|
       if @multi.save
