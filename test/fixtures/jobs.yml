@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  time: 2016-04-01 14:26:30
+  finished: false
+  order: 1.5
+  multi_id: 
+  distance: 1.5
+  checkin: false
+
+two:
+  user_id: 
+  time: 2016-04-01 14:26:30
+  finished: false
+  order: 1.5
+  multi_id: 
+  distance: 1.5
+  checkin: false
