@@ -1,6 +1,5 @@
-<h1>Editing multi</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @multi %> |
-<%= link_to 'Back', multis_path %>
+<%- model_class = Multi -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Multi %></h1>
+</div>
+<%= render :partial => 'form' %>
