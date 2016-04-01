@@ -1,39 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Job -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Job %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @job.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:time) %></dt>
+      <dd><pre class="prettyprint"><%= @job.time %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:finished) %></dt>
+      <dd><pre class="prettyprint"><%= @job.finished %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:order) %></dt>
+      <dd><pre class="prettyprint"><%= @job.order %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:distance) %></dt>
+      <dd><pre class="prettyprint"><%= @job.distance %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:checkin) %></dt>
+      <dd><pre class="prettyprint"><%= @job.checkin %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Time:</strong>
-  <%= @job.time %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              jobs_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_job_path(@job), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              job_path(@job),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Finished:</strong>
-  <%= @job.finished %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @job.order %>
-</p>
-
-<p>
-  <strong>Multi:</strong>
-  <%= @job.multi %>
-</p>
-
-<p>
-  <strong>Distance:</strong>
-  <%= @job.distance %>
-</p>
-
-<p>
-  <strong>Checkin:</strong>
-  <%= @job.checkin %>
-</p>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
