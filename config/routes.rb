@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :customers
+
   resources :jobs
 
   resources :multis
